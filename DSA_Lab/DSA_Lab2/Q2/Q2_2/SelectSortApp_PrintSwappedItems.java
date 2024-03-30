@@ -33,33 +33,39 @@ class ArraySel {
     // --------------------------------------------------------------
     public void selectionSort() {
         int out, in, min;
-  
+
         for (out = 0; out < nElems - 1; out++) // outer loop
         {
-           System.out.println("--------------------------------------");
-  
-           System.out.println("Outer loop " + out + " :");
-  
-           min = out; // minimum
-           for (in = out + 1; in < nElems; in++) {// inner loop
-              if (a[in] < a[min]) { // if min greater,
-                 min = in; // we have a new min
-              }
-              if (in < nElems - 1) {
-                 System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
-                 display();
-              }
-           }
-           System.out.println("The swapped items: " + a[out] + " and " + a[min]);
-           swap(out, min); // swap them
-           if (in == nElems) {
-              System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
-              display();
-           }
-  
+            System.out.println("--------------------------------------");
+
+            System.out.println("Outer loop " + out + " :");
+
+            min = out; // minimum
+            for (in = out + 1; in < nElems; in++) {// inner loop
+                if (a[in] < a[min]) { // if min greater,
+                    min = in; // we have a new min
+                }
+                if (in < nElems - 1) {
+                    System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
+                    display();
+                }
+            }
+            System.out.println("The swapped items: " + a[out] + " and " + a[min]);
+            swap(out, min); // swap them
+            if (in == nElems) {
+                System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
+                display();
+            }
+
         } // end for(out)
-     } // end selectionSort()
-    // --------------------------------------------------------------
+
+        /*
+         * Question: Are swaps always needed?
+         * Answer: The swaps are not always needed. Particularly, when a[out] == a[min].
+         */
+
+    } // end selectionSort()
+      // --------------------------------------------------------------
 
     private void swap(int one, int two) {
         long temp = a[one];
@@ -68,7 +74,7 @@ class ArraySel {
     }
     // --------------------------------------------------------------
 } // end class ArraySel
-////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////
 
 class SelectSortApp_PrintSwappedItems {
     public static void main(String[] args) {
@@ -94,4 +100,4 @@ class SelectSortApp_PrintSwappedItems {
         arr.display(); // display them again
     } // end main()
 } // end class SelectSortApp
-////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////

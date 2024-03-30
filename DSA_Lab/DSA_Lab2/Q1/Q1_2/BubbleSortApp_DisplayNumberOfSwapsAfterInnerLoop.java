@@ -31,23 +31,31 @@ class ArrayBub
    public void bubbleSort()
       {
       int out, in;
-      int count_swap=0; 
+      int count_comparison=0; 
+      int total_comparisons = 0; 
+      double complexity; 
       for(out=nElems-1; out>1; out--)   {// outer loop (backward)
          System.out.println("--------------------------------------");
          int out_num = nElems - out;
          System.out.println("Outer loop "+out_num +" :"); 
 
          for(in=0; in<out; in++) {       // inner loop (forward)
+            count_comparison +=1; 
             if( a[in] > a[in+1] )  {     // out of order?
                swap(in, in+1);   
-               count_swap +=1; 
+               count_comparison +=1; 
             }
-         System.out.println("The number of swaps after inner loop "+ in + ": "+count_swap);     // swap them
-         count_swap =0; 
+         System.out.println("The number of comparisons after inner loop "+ in + ": "+count_comparison);     // swap them
+         total_comparisons += count_comparison; 
+         count_comparison =0; 
          }   
-         
-         
       }  
+
+      complexity = total_comparisons*1.0 *(total_comparisons - 1)*1.0 / 2.0;
+      System.out.println("The total number of comparisons is "+total_comparisons);     
+      System.out.println("The complexity of the algorithm is "+complexity);    
+         
+         
    }// end bubbleSort()
 //--------------------------------------------------------------
    private void swap(int one, int two)
