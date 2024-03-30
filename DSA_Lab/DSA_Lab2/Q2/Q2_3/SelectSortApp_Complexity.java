@@ -35,7 +35,8 @@ class ArraySel {
    // --------------------------------------------------------------
    public void selectionSort() {
       int out, in, min;
-
+      int number_of_comparisons =0; 
+      int total_comparisons=0; 
       for (out = 0; out < nElems - 1; out++) // outer loop
       {
          System.out.println("--------------------------------------");
@@ -43,22 +44,37 @@ class ArraySel {
          System.out.println("Outer loop " + out + " :");
 
          min = out; // minimum
+         
          for (in = out + 1; in < nElems; in++) {// inner loop
+
+            number_of_comparisons ++;
             if (a[in] < a[min]) { // if min greater,
+               
                min = in; // we have a new min
             }
-            if (in < nElems - 1) {
-               System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
-               display();
-            }
+
+            System.out.println("The number of comparisons after the inner loop " +in+": 1" );
+            
+           
          }
          swap(out, min); // swap them
-         if (in == nElems) {
-            System.out.println("Inner loop " + in + " :"); // display the array inside after inner loop
-            display();
-         }
+         
+         System.out.println("The number of comparisons after the outer loop is: " + number_of_comparisons);
 
+         System.out.println("The array after inner loop " + in + " :"); // display the array inside after inner loop
+         display();
+
+         total_comparisons = total_comparisons + number_of_comparisons; 
+
+         System.out.println("The total number of comparisons is "+total_comparisons);
+         number_of_comparisons =0; 
       } // end for(out)
+      System.out.println("--------------------------------------");  
+      System.out.println("The total number of comparisons is "+total_comparisons);
+
+      double conplexity = total_comparisons*1.0 * (total_comparisons*1.0-1) / (2*1.0); 
+      System.out.println("The algorithm's complexity is "+conplexity);
+      
    } // end selectionSort()
      // --------------------------------------------------------------
 

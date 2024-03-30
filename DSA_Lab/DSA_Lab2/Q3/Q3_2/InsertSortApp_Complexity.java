@@ -1,4 +1,4 @@
-package Q3.Q3_1;
+package Q3.Q3_2;
 
 // insertSort.java
 // demonstrates insertion sort
@@ -33,7 +33,9 @@ class ArrayIns {
    // --------------------------------------------------------------
    public void insertionSort() {
       int in, out;
-
+      int count_passes = 0; 
+      int total_passes= 0; 
+      double complexity; 
       for (out = 1; out < nElems; out++) // out is dividing line
       {
          System.out.println("--------------------------------------");
@@ -45,19 +47,31 @@ class ArrayIns {
          while (in > 0 && a[in - 1] >= temp) // until one is smaller,
          {
             a[in] = a[in - 1]; // shift item to right
+            count_passes += 1;
             --in; // go left one position
             a[in] = temp; // insert marked item
+
             
          }
+            
          System.out.println("Outer loop " + out + " :"); // display the array inside after outer loop
          display();
+
+         // System.out.println("--------------------------------------");
+         System.out.println("The number of passes after inner loop "+ out + ": "+count_passes); 
+         total_passes += count_passes; 
+         count_passes =0; 
       } // end for
+      System.out.println("The number of total passes is "+ total_passes); 
+      
+      complexity = total_passes*1.0 *( total_passes*1.0 -1)/4.0; 
+      System.out.println("The algorithm's complexity is "+ complexity); 
    } // end insertionSort()
    // --------------------------------------------------------------
 } // end class ArrayIns
 ////////////////////////////////////////////////////////////////
 
-class InsertSortApp_TraceTheAlgorithm {
+class InsertSortApp_Complexity {
    public static void main(String[] args) {
       int maxSize = 100; // array size
       ArrayIns arr; // reference to array
