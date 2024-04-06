@@ -1,0 +1,12 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "3.4/Q7",
+        "3.4/Q6",
+        "3.4/Q5",
+        "3.4/Q4",
+        "3.4/Q3",
+        "3.4/Q1",
+        "3.4/Q2"
+    ]
+}
