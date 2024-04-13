@@ -1,4 +1,4 @@
-// package Q4_3; 
+ 
 class LinkList
    {
    private Link first;            // ref to first item on list

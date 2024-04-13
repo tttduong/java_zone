@@ -1,4 +1,4 @@
-// package Q4_3; 
+ 
 class LinkStack {
     private LinkList theList;
 
