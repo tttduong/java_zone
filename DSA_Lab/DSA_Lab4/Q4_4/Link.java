@@ -12,5 +12,9 @@ class Link
 // -------------------------------------------------------------
    public void displayLink()         // display this link
       { System.out.print(dData + " "); }
+
+   public long getdData(){
+      return dData; 
+   }
 // -------------------------------------------------------------
    }  // end class Link
