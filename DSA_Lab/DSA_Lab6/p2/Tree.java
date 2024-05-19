@@ -3,7 +3,6 @@
 // CS 501 
 // Zdravko Markov
 // -------------------------------------------------------------
-package p1;
 class Tree
 {
 
@@ -32,6 +31,9 @@ class Tree
         System.out.println("\nValue: "+eval(i));
 
         System.out.println("\nNumber of elements:  "+count_element(i));
+        System.out.println("Height:  "+count_height(i));
+
+
 
     }
     // -------------------------------------------------------------
@@ -137,6 +139,19 @@ class Tree
         } else {
             return 1 + count_element(t.leftChild) + count_element(t.rightChild);
         }
+    }
+
+    public static int count_height(Node t) {
+
+        int l_height;
+        int r_height;
+        if (t == null) {
+            return 0;
+        } else {
+            l_height = 1 + count_height(t.leftChild);
+            r_height = 1 + count_height(t.rightChild);
+        }
+        return Math.max(l_height, r_height);
     }
 }
 // -------------------------------------------------------------
