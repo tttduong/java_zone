@@ -66,16 +66,16 @@ public class MyCalculator extends JFrame {
         
     }
     public static void main (String[] args){
-        try{
-            // com.sun.java.swing.plaf.gtk.GTKLookAndFeel -- không hỗ trợ
-            // com.sun.java.swing.plaf.motif.MotifLookAndFeel
-            // com.sun.java.swing.plaf.windows.WindowsLookAndFeel
-            UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
+        // try{
+        //     // com.sun.java.swing.plaf.gtk.GTKLookAndFeel -- không hỗ trợ
+        //     // com.sun.java.swing.plaf.motif.MotifLookAndFeel
+        //     // com.sun.java.swing.plaf.windows.WindowsLookAndFeel
+        //     UIManager.setLookAndFeel("com.sun.java.swing.plaf.motif.MotifLookAndFeel");
             // UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());;
             MyCalculator mc = new MyCalculator() ; 
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }; 
-        // MyCalculator mc = new MyCalculator() ; 
+        // }catch(Exception ex){
+        //     ex.printStackTrace();
+        // }; 
+        // // MyCalculator mc = new MyCalculator() ; 
     }
 }
